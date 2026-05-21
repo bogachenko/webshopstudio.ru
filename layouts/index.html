@@ -1,7 +1,7 @@
 {{ define "main" }}
-  {{ partial "ui/section.html" (dict "id" "hero" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>Hero</h2><p class='mt-3 text-slate-600'>Placeholder for Hero section.</p>") }}
-  {{ partial "ui/section.html" (dict "id" "audience" "variant" "gray" "inner" "<h2 class='font-display text-3xl font-bold'>Audience</h2><p class='mt-3 text-slate-600'>Placeholder for Audience section.</p>") }}
-  {{ partial "ui/section.html" (dict "id" "services" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>Services</h2><p class='mt-3 text-slate-600'>Placeholder for ServicesDetailed section.</p>") }}
+  {{ partial "sections/hero.html" . }}
+  {{ partial "sections/audience.html" . }}
+  {{ partial "sections/services-detailed.html" . }}
   {{ partial "ui/section.html" (dict "id" "turnkey" "variant" "dark" "inner" "<h2 class='font-display text-3xl font-bold'>Turnkey</h2><p class='mt-3 text-slate-300'>Placeholder for Turnkey section.</p>") }}
   {{ partial "ui/section.html" (dict "id" "why-wp" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>WhyWP</h2><p class='mt-3 text-slate-600'>Placeholder for WhyWP section.</p>") }}
   {{ partial "ui/section.html" (dict "id" "deliverables" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>Deliverables</h2><p class='mt-3 text-slate-600'>Placeholder for Deliverables section.</p>") }}

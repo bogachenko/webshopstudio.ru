@@ -1,0 +1,26 @@
+<section id="services" class="site-section site-section-white">
+  <div class="site-container">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
+        {{ range index site.Data "services-detailed" }}
+          <article class="flex h-full flex-col rounded-3xl bg-gray-50 p-8 sm:p-10">
+            <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-600 shadow-xl shadow-indigo-600/20">
+              {{ partial (printf "icons/%s.html" .icon) (dict "class" "h-7 w-7 text-white") }}
+            </div>
+            <h3 class="mb-4 text-2xl font-bold tracking-tight text-gray-900">{{ .title }}</h3>
+            <p class="mb-8 border-b border-gray-200 pb-8 text-lg text-gray-600">{{ .description }}</p>
+            <p class="mb-6 text-sm font-semibold uppercase tracking-wider text-gray-900">What is included:</p>
+            <ul class="space-y-4">
+              {{ range .features }}
+                <li class="flex items-start">
+                  {{ partial "icons/check.html" (dict "class" "h-5 w-5 text-indigo-600") }}
+                  <span class="ml-3 text-base text-gray-700">{{ . }}</span>
+                </li>
+              {{ end }}
+            </ul>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
