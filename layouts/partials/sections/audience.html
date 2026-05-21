@@ -1,17 +1,17 @@
 <section id="audience" class="site-section site-section-gray">
   <div class="site-container">
-    <div class="mx-auto max-w-2xl text-center">
+    <div class="fade-in mx-auto max-w-2xl text-center" style="--fade-delay: 0s">
       <h2 class="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">We create websites for businesses that need a fast and clear way to get online.</h2>
     </div>
 
     <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:max-w-none lg:grid-cols-4">
-      {{ range site.Data.audience }}
-        <article class="flex h-full flex-col rounded-3xl bg-white p-8 shadow-sm ring-1 ring-gray-200/50 transition-shadow hover:shadow-md">
-          <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl {{ .bgColor }}">
-            {{ partial (printf "icons/%s.html" .icon) (dict "class" (printf "h-6 w-6 %s" .color)) }}
+      {{ range $index, $item := site.Data.audience }}
+        <article class="fade-in flex h-full flex-col rounded-3xl bg-white p-8 shadow-sm ring-1 ring-gray-200/50 transition-shadow hover:shadow-md" style="--fade-delay: {{ mul $index 0.1 }}s">
+          <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl {{ $item.bgColor }}">
+            {{ partial (printf "icons/%s.html" $item.icon) (dict "class" (printf "h-6 w-6 %s" $item.color)) }}
           </div>
-          <h3 class="mb-3 text-xl font-semibold text-gray-900">{{ .title }}</h3>
-          <p class="flex-grow text-base leading-relaxed text-gray-600">{{ .description }}</p>
+          <h3 class="mb-3 text-xl font-semibold text-gray-900">{{ $item.title }}</h3>
+          <p class="flex-grow text-base leading-relaxed text-gray-600">{{ $item.description }}</p>
         </article>
       {{ end }}
     </div>
