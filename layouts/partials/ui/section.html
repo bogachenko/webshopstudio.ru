@@ -1,0 +1,11 @@
+{{- $variant := .variant | default "white" -}}
+{{- $variantClass := "site-section-white" -}}
+{{- if eq $variant "gray" -}}
+  {{- $variantClass = "site-section-gray" -}}
+{{- else if eq $variant "dark" -}}
+  {{- $variantClass = "site-section-dark" -}}
+{{- end -}}
+{{- $sectionClass := .class | default "" -}}
+<section id="{{ .id }}" class="site-section {{ $variantClass }}{{ if $sectionClass }} {{ $sectionClass }}{{ end }}">
+  {{ partial "ui/container.html" (dict "class" (.containerClass | default "") "inner" .inner) }}
+</section>

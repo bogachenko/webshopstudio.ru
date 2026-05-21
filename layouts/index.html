@@ -1,14 +1,14 @@
 {{ define "main" }}
-  <section id="hero"><h2>Hero</h2><p>Placeholder for Hero section.</p></section>
-  <section id="audience"><h2>Audience</h2><p>Placeholder for Audience section.</p></section>
-  <section id="services"><h2>Services</h2><p>Placeholder for ServicesDetailed section.</p></section>
-  <section id="turnkey"><h2>Turnkey</h2><p>Placeholder for Turnkey section.</p></section>
-  <section id="why-wp"><h2>WhyWP</h2><p>Placeholder for WhyWP section.</p></section>
-  <section id="deliverables"><h2>Deliverables</h2><p>Placeholder for Deliverables section.</p></section>
-  <section id="pricing"><h2>Pricing</h2><p>Placeholder for Packages section.</p></section>
-  <section id="additional"><h2>Additional</h2><p>Placeholder for Additional section.</p></section>
-  <section id="process"><h2>Process</h2><p>Placeholder for Process section.</p></section>
-  <section id="portfolio"><h2>Portfolio</h2><p>Placeholder for Portfolio section.</p></section>
-  <section id="faq"><h2>FAQ</h2><p>Placeholder for FAQ section.</p></section>
-  <section id="contact"><h2>Contact</h2><p>Placeholder for Contact section.</p></section>
+  {{ partial "ui/section.html" (dict "id" "hero" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>Hero</h2><p class='mt-3 text-slate-600'>Placeholder for Hero section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "audience" "variant" "gray" "inner" "<h2 class='font-display text-3xl font-bold'>Audience</h2><p class='mt-3 text-slate-600'>Placeholder for Audience section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "services" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>Services</h2><p class='mt-3 text-slate-600'>Placeholder for ServicesDetailed section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "turnkey" "variant" "dark" "inner" "<h2 class='font-display text-3xl font-bold'>Turnkey</h2><p class='mt-3 text-slate-300'>Placeholder for Turnkey section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "why-wp" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>WhyWP</h2><p class='mt-3 text-slate-600'>Placeholder for WhyWP section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "deliverables" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>Deliverables</h2><p class='mt-3 text-slate-600'>Placeholder for Deliverables section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "pricing" "variant" "gray" "inner" "<h2 class='font-display text-3xl font-bold'>Pricing</h2><p class='mt-3 text-slate-600'>Placeholder for Packages section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "additional" "variant" "gray" "inner" "<h2 class='font-display text-3xl font-bold'>Additional</h2><p class='mt-3 text-slate-600'>Placeholder for Additional section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "process" "variant" "gray" "inner" "<h2 class='font-display text-3xl font-bold'>Process</h2><p class='mt-3 text-slate-600'>Placeholder for Process section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "portfolio" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>Portfolio</h2><p class='mt-3 text-slate-600'>Placeholder for Portfolio section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "faq" "variant" "white" "inner" "<h2 class='font-display text-3xl font-bold'>FAQ</h2><p class='mt-3 text-slate-600'>Placeholder for FAQ section.</p>") }}
+  {{ partial "ui/section.html" (dict "id" "contact" "variant" "dark" "inner" "<h2 class='font-display text-3xl font-bold'>Contact</h2><p class='mt-3 text-slate-300'>Placeholder for Contact section.</p>") }}
 {{ end }}

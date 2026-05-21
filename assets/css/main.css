@@ -1,25 +1,47 @@
-* {
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  color: #111;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 font-sans text-slate-900 bg-white antialiased;
+  }
+
+  ::selection {
+    @apply bg-indigo-100 text-indigo-900;
+  }
 }
 
-.container {
-  width: min(1100px, 92%);
-  margin: 0 auto;
-}
+@layer components {
+  .site-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
 
-header,
-footer,
-section {
-  padding: 1.25rem 0;
-}
+  .site-section {
+    @apply py-20 sm:py-32;
+  }
 
-section {
-  border-top: 1px solid #e5e5e5;
+  .site-section-white {
+    @apply bg-white;
+  }
+
+  .site-section-gray {
+    @apply bg-gray-50;
+  }
+
+  .site-section-dark {
+    @apply bg-slate-900 text-white;
+  }
+
+  .fade-in {
+    @apply opacity-0 translate-y-3;
+  }
 }
