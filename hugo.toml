@@ -1,15 +1,15 @@
 baseURL = "/"
-languageCode = "en"
-title = "WebStudio — Turnkey Websites and Online Stores"
+languageCode = "ru"
+title = "WebStudio — сайты и интернет-магазины под ключ"
 
 [taxonomies]
 
 [outputs]
-  home = ["HTML"]
+home = ["HTML"]
 
 [params]
-  description = "We create turnkey websites, landing pages, corporate websites, and online stores on WordPress + WooCommerce with domain, hosting, setup, and handover."
-  siteName = "WebStudio"
-  ogTitle = "WebStudio — Turnkey Websites and Online Stores"
-  ogDescription = "We create turnkey websites, landing pages, corporate websites, and online stores on WordPress + WooCommerce with domain, hosting, setup, and handover."
-  twitterCard = "summary"
+description = "Создаём сайты, лендинги, корпоративные сайты и интернет-магазины на WordPress + WooCommerce под ключ: домен, хостинг, настройка и передача клиенту."
+siteName = "WebStudio"
+ogTitle = "WebStudio — сайты и интернет-магазины под ключ"
+ogDescription = "Создаём сайты, лендинги, корпоративные сайты и интернет-магазины на WordPress + WooCommerce под ключ: домен, хостинг, настройка и передача клиенту."
+twitterCard = "summary"

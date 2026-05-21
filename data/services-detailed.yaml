@@ -1,25 +1,26 @@
 items:
-  - title: Online stores on WordPress + WooCommerce
-    description: We create online stores with convenient management of products, orders, and customers.
+  - title: "Интернет-магазины на WordPress + WooCommerce"
+    description: "Создаём интернет-магазины с удобным управлением товарами, заказами и клиентами."
     icon: shopping-cart
     features:
-      - WordPress and WooCommerce installation
-      - product catalog setup
-      - categories, filters, product pages
-      - cart and checkout
-      - payment and delivery method setup
-      - basic SEO setup
-      - mobile adaptation
-      - store management instructions
-  - title: Simple turnkey websites
-    description: We develop websites of any format: landing pages, business card websites, corporate websites, promo pages, and portfolios.
+      - "установка WordPress и WooCommerce"
+      - "настройка каталога товаров"
+      - "категории, фильтры, карточки товаров"
+      - "корзина и оформление заказа"
+      - "настройка способов оплаты и доставки"
+      - "базовая SEO-настройка"
+      - "адаптация под мобильные устройства"
+      - "инструкция по управлению магазином"
+
+  - title: "Простые сайты под ключ"
+    description: "Разрабатываем сайты любого формата: лендинги, сайты-визитки, корпоративные сайты, промо-страницы и портфолио."
     icon: layout
     features:
-      - website structure
-      - design or adaptation of a ready-made template
-      - page layout
-      - inquiry forms
-      - domain connection
-      - hosting setup
-      - basic technical setup
-      - website handover to the client
+      - "структура сайта"
+      - "дизайн или адаптация готового шаблона"
+      - "вёрстка страниц"
+      - "формы заявок"
+      - "подключение домена"
+      - "настройка хостинга"
+      - "базовая техническая настройка"
+      - "передача сайта клиенту"

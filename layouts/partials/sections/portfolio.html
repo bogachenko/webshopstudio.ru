@@ -1,26 +1,35 @@
 <section id="portfolio" class="site-section site-section-white">
   <div class="site-container">
     <div class="fade-in mx-auto max-w-2xl text-center" style="--fade-delay: 0s">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Work examples</h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600">We can show demo website examples and suggest a structure for your niche.</p>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Примеры работ</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">Мы можем показать демонстрационные примеры сайтов и предложить структуру под вашу нишу.</p>
     </div>
 
     <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
       {{ range $index, $project := site.Data.portfolio.projects }}
         <article class="fade-in group relative flex flex-col items-start justify-between rounded-3xl bg-gray-50 p-6 ring-1 ring-gray-200 transition-all hover:shadow-lg sm:p-8" style="--fade-delay: {{ mul $index 0.1 }}s">
-          <div class="relative mb-6 flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl bg-gray-200 object-cover sm:aspect-[2/1] lg:aspect-video">
-            <div class="absolute inset-0 bg-gradient-to-tr from-gray-300 to-gray-100 opacity-50"></div>
-            <span class="z-10 flex items-center gap-2 font-medium text-gray-500">
-              {{ $project.name }}
-              {{ partial "icons/external-link.html" (dict "class" "h-4 w-4") }}
-            </span>
+          <div class="relative mb-6 aspect-video w-full overflow-hidden rounded-2xl bg-gray-200 shadow-sm ring-1 ring-gray-200">
+            <img
+              src="{{ $project.image }}"
+              alt="{{ $project.imageAlt }}"
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            >
           </div>
-          <span class="relative z-10 rounded-full bg-indigo-50 px-3 py-1.5 font-medium text-indigo-600">{{ $project.tag }}</span>
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-indigo-600">Client's task</h3>
-          <p class="mt-2 text-sm leading-6 text-gray-600">A brief description of what the client wanted to achieve. Increase sales, showcase portfolio, etc.</p>
+
+          <span class="relative z-10 rounded-full bg-indigo-50 px-3 py-1.5 text-sm font-medium text-indigo-600">{{ $project.tag }}</span>
+
+          <h3 class="mt-4 text-xl font-semibold leading-7 text-gray-900 group-hover:text-indigo-600">{{ $project.name }}</h3>
+
           <div class="mt-4">
-            <h4 class="text-sm font-semibold text-gray-900">What was done:</h4>
-            <p class="mt-1 text-sm text-gray-600">Full cycle development, custom design, WooCommerce integration.</p>
+            <h4 class="text-sm font-semibold text-gray-900">{{ $project.taskTitle }}</h4>
+            <p class="mt-1 text-sm leading-6 text-gray-600">{{ $project.taskDescription }}</p>
+          </div>
+
+          <div class="mt-4">
+            <h4 class="text-sm font-semibold text-gray-900">{{ $project.resultTitle }}</h4>
+            <p class="mt-1 text-sm leading-6 text-gray-600">{{ $project.resultDescription }}</p>
           </div>
         </article>
       {{ end }}

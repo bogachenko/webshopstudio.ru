@@ -1,20 +1,24 @@
-- title: Online stores
-  description: Product catalog, cart, checkout, payment, delivery, customer account.
-  icon: shopping-bag
-  color: text-blue-600
-  bgColor: bg-blue-50
-- title: Small businesses
-  description: A website for services, inquiries, company presentation, and customer acquisition.
-  icon: briefcase
-  color: text-indigo-600
-  bgColor: bg-indigo-50
-- title: Experts and professionals
-  description: Personal website, portfolio, services page, booking or inquiry form.
-  icon: user
-  color: text-emerald-600
-  bgColor: bg-emerald-50
-- title: Companies without a website
-  description: Full launch from scratch: domain, hosting, structure, design, setup, and handover.
-  icon: building
-  color: text-rose-600
-  bgColor: bg-rose-50
+items:
+  - title: Интернет-магазины
+    description: "Каталог товаров, корзина, оформление заказа, оплата, доставка, личный кабинет."
+    icon: shopping-bag
+    color: text-blue-600
+    bgColor: bg-blue-50
+
+  - title: Малый бизнес
+    description: "Сайт для услуг, заявок, презентации компании и привлечения клиентов."
+    icon: briefcase
+    color: text-indigo-600
+    bgColor: bg-indigo-50
+
+  - title: Эксперты и специалисты
+    description: "Личный сайт, портфолио, страница услуг, форма записи или заявки."
+    icon: user
+    color: text-emerald-600
+    bgColor: bg-emerald-50
+
+  - title: Компании без сайта
+    description: "Полный запуск с нуля: домен, хостинг, структура, дизайн, настройка и передача."
+    icon: building
+    color: text-rose-600
+    bgColor: bg-rose-50

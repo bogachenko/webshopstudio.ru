@@ -1,13 +1,18 @@
 items:
-  - question: Will the website be registered in my name?
-    answer: Yes. The domain and hosting are registered using the client’s details. You receive access details and control over the website.
-  - question: Will I be able to edit the website myself?
-    answer: Yes. After the website is handed over, you will be able to change texts, images, products, and other information through the admin panel.
-  - question: Do you only create WordPress websites?
-    answer: We usually create online stores on WordPress + WooCommerce. Simple websites can be built in another format if it better suits the task.
-  - question: Can I order only the website without domain and hosting?
-    answer: Yes. If you already have a domain and hosting, we can work with them.
-  - question: Do you add products to the website?
-    answer: Yes, content filling can be included in the project separately.
-  - question: Can the website be improved later?
-    answer: Yes, the website can be developed further: pages, features, integrations, and new sections can be added.
+  - question: "Сайт будет зарегистрирован на меня?"
+    answer: "Да. Домен и хостинг регистрируются на данные клиента. Вы получаете доступы и контроль над сайтом."
+
+  - question: "Я смогу самостоятельно редактировать сайт?"
+    answer: "Да. После передачи сайта вы сможете менять тексты, изображения, товары и другую информацию через административную панель."
+
+  - question: "Вы создаёте только сайты на WordPress?"
+    answer: "Интернет-магазины мы обычно создаём на WordPress + WooCommerce. Простые сайты можем сделать в другом формате, если он лучше подходит под задачу."
+
+  - question: "Можно заказать только сайт без домена и хостинга?"
+    answer: "Да. Если у вас уже есть домен и хостинг, мы можем работать с ними."
+
+  - question: "Вы добавляете товары на сайт?"
+    answer: "Да, наполнение сайта можно включить в проект отдельно."
+
+  - question: "Сайт можно будет доработать позже?"
+    answer: "Да, сайт можно развивать дальше: добавлять страницы, функции, интеграции и новые разделы."

@@ -1,4 +1,4 @@
 ---
-title: "Turnkey Websites and Online Stores"
-description: "We create turnkey websites, landing pages, corporate websites, and online stores on WordPress + WooCommerce with domain, hosting, setup, and handover."
+title: "Сайты и интернет-магазины под ключ"
+description: "Создаём сайты, лендинги, корпоративные сайты и интернет-магазины на WordPress + WooCommerce под ключ: домен, хостинг, настройка и передача клиенту."
 ---

@@ -1,31 +1,31 @@
 tiers:
   - id: tier-business
-    title: Business card website
-    description: For professionals, small companies, and services.
+    title: Сайт-визитка
+    description: Для специалистов, небольших компаний и услуг.
     mostPopular: false
     features:
-      - up to 5 pages
-      - responsive design
-      - inquiry form
-      - domain and hosting connection
-      - basic setup
+      - до 5 страниц
+      - адаптивный дизайн
+      - форма заявки
+      - подключение домена и хостинга
+      - базовая настройка
   - id: tier-landing
-    title: Landing page
-    description: For advertising, a service, a product, or a promotion.
+    title: Лендинг
+    description: Для рекламы, услуги, продукта или акции.
     mostPopular: true
     features:
-      - sales page structure
-      - sections for the offer, benefits, services, reviews, and inquiry form
-      - responsive layout
-      - analytics connection
-      - inquiry form setup
+      - структура продающей страницы
+      - блоки для предложения, преимуществ, услуг, отзывов и формы заявки
+      - адаптивная вёрстка
+      - подключение аналитики
+      - настройка формы заявки
   - id: tier-ecommerce
-    title: Online store
-    description: For selling products online.
+    title: Интернет-магазин
+    description: Для продажи товаров онлайн.
     mostPopular: false
     features:
       - WordPress + WooCommerce
-      - product catalog
-      - cart and checkout
-      - payment and delivery setup
-      - basic training on store management
+      - каталог товаров
+      - корзина и оформление заказа
+      - настройка оплаты и доставки
+      - базовое обучение управлению магазином

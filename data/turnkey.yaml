@@ -1,16 +1,16 @@
 steps:
-  - title: We discuss the task
-    description: We understand what kind of website is needed, what pages, features, and goals it should have.
+  - title: Обсуждаем задачу
+    description: Понимаем, какой сайт нужен, какие страницы, функции и цели он должен иметь.
     icon: message-square
-  - title: We choose a domain and hosting
-    description: We help register the domain name and hosting using the client’s details.
+  - title: Подбираем домен и хостинг
+    description: Помогаем зарегистрировать доменное имя и хостинг на данные клиента.
     icon: globe
-  - title: We create the website
-    description: We develop the structure, design, pages, and functionality.
+  - title: Создаём сайт
+    description: Разрабатываем структуру, дизайн, страницы и функционал.
     icon: laptop
-  - title: We configure and test everything
-    description: We check forms, responsiveness, speed, and basic settings.
+  - title: Настраиваем и проверяем всё
+    description: Проверяем формы, адаптивность, скорость и базовые настройки.
     icon: wrench
-  - title: We hand over the website to the client
-    description: We provide access details and explain how to use the website and manage content.
+  - title: Передаём сайт клиенту
+    description: Передаём доступы и объясняем, как пользоваться сайтом и управлять контентом.
     icon: key
