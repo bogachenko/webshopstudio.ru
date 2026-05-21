@@ -1,0 +1,17 @@
+<section id="additional" class="bg-gray-50 py-20 sm:py-32">
+  <div class="site-container">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Additional services</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">We provide full support for your online business beyond just website creation.</p>
+    </div>
+
+    <div class="mx-auto mt-16 max-w-4xl columns-1 gap-8 sm:columns-2">
+      {{ range site.Data.additional.services }}
+        <div class="flex break-inside-avoid items-center gap-3 py-3">
+          {{ partial "icons/check-circle.html" (dict "class" "h-5 w-5 shrink-0 text-indigo-500") }}
+          <span class="text-gray-700">{{ . }}</span>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

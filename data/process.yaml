@@ -1,0 +1,11 @@
+steps:
+  - title: Request
+    description: You submit a request or message us.
+  - title: Consultation
+    description: We discuss the task, niche, website, features, and timeline.
+  - title: Project estimate
+    description: We suggest a solution, price, and work stages.
+  - title: Development
+    description: We create the website and approve key stages with you.
+  - title: Launch
+    description: We connect the domain, set up hosting, test the website, and hand over access details.

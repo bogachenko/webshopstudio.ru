@@ -1,0 +1,28 @@
+<section id="process" class="bg-gray-50 py-20 sm:py-32">
+  <div class="site-container">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">How the work process goes</h2>
+    </div>
+
+    <div class="mx-auto mt-16 max-w-3xl">
+      <div class="relative ml-3 border-l border-gray-200 md:ml-0 md:flex md:justify-center md:border-none">
+        <div class="absolute bottom-0 left-[2.25rem] top-0 hidden w-px bg-gray-200 md:block"></div>
+        <div class="relative z-10 w-full space-y-12 md:space-y-0">
+          {{ range $index, $step := site.Data.process.steps }}
+            <div class="relative pl-10 md:mb-12 md:pl-0">
+              <div class="md:flex md:items-center">
+                <div class="absolute left-[-5px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 ring-4 ring-gray-50 md:relative md:left-0 md:top-0 md:mx-auto md:h-12 md:w-12 md:flex-shrink-0 md:ring-8">
+                  <span class="text-xs font-bold text-white md:text-lg">{{ add $index 1 }}</span>
+                </div>
+                <div class="md:-mt-2 md:ml-6 md:w-full md:pl-16 lg:ml-0 lg:pl-20">
+                  <h3 class="text-xl font-bold text-gray-900 md:mt-2">{{ $step.title }}</h3>
+                  <p class="mt-2 text-base text-gray-600">{{ $step.description }}</p>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
