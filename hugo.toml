@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en"
-title = "Web Studio Launch"
+title = "WebStudio — Turnkey Websites and Online Stores"
 
 [taxonomies]
 
@@ -8,4 +8,8 @@ title = "Web Studio Launch"
   home = ["HTML"]
 
 [params]
-  description = "Single-page launch site scaffolded with Hugo."
+  description = "We create turnkey websites, landing pages, corporate websites, and online stores on WordPress + WooCommerce with domain, hosting, setup, and handover."
+  siteName = "WebStudio"
+  ogTitle = "WebStudio — Turnkey Websites and Online Stores"
+  ogDescription = "We create turnkey websites, landing pages, corporate websites, and online stores on WordPress + WooCommerce with domain, hosting, setup, and handover."
+  twitterCard = "summary"
