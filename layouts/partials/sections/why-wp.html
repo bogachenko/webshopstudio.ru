@@ -1,0 +1,22 @@
+<section id="why-wp" class="bg-white py-20 sm:py-32">
+  <div class="site-container">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why we use WordPress + WooCommerce for online stores</h2>
+    </div>
+
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+      {{ range (index site.Data "why-wp").features }}
+        <div class="relative pl-16">
+          <dt>
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+              {{ partial "icons/check-circle.html" (dict "class" "h-6 w-6 text-white") }}
+            </div>
+          </dt>
+          <dd class="text-base leading-7 text-gray-600">{{ . }}</dd>
+        </div>
+      {{ end }}
+      </dl>
+    </div>
+  </div>
+</section>

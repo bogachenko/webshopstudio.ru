@@ -1,0 +1,16 @@
+steps:
+  - title: We discuss the task
+    description: We understand what kind of website is needed, what pages, features, and goals it should have.
+    icon: message-square
+  - title: We choose a domain and hosting
+    description: We help register the domain name and hosting using the client’s details.
+    icon: globe
+  - title: We create the website
+    description: We develop the structure, design, pages, and functionality.
+    icon: laptop
+  - title: We configure and test everything
+    description: We check forms, responsiveness, speed, and basic settings.
+    icon: wrench
+  - title: We hand over the website to the client
+    description: We provide access details and explain how to use the website and manage content.
+    icon: key

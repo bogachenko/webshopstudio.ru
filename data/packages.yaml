@@ -1,0 +1,31 @@
+tiers:
+  - id: tier-business
+    title: Business card website
+    description: For professionals, small companies, and services.
+    mostPopular: false
+    features:
+      - up to 5 pages
+      - responsive design
+      - inquiry form
+      - domain and hosting connection
+      - basic setup
+  - id: tier-landing
+    title: Landing page
+    description: For advertising, a service, a product, or a promotion.
+    mostPopular: true
+    features:
+      - sales page structure
+      - sections for the offer, benefits, services, reviews, and inquiry form
+      - responsive layout
+      - analytics connection
+      - inquiry form setup
+  - id: tier-ecommerce
+    title: Online store
+    description: For selling products online.
+    mostPopular: false
+    features:
+      - WordPress + WooCommerce
+      - product catalog
+      - cart and checkout
+      - payment and delivery setup
+      - basic training on store management

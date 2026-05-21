@@ -1,0 +1,18 @@
+<section id="deliverables" class="bg-white py-20 sm:py-32">
+  <div class="site-container">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">As a result, you get a ready-to-use website</h2>
+    </div>
+
+    <div class="mx-auto mt-16 max-w-3xl rounded-3xl bg-indigo-50 p-8 ring-1 ring-indigo-100 sm:p-12">
+      <ul class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        {{ range site.Data.deliverables.benefits }}
+          <li class="flex gap-x-3">
+            {{ partial "icons/check.html" (dict "class" "h-6 w-5 flex-none text-indigo-600") }}
+            <span class="text-gray-700">{{ . }}</span>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>
