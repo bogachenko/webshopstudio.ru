@@ -1,6 +1,60 @@
 (() => {
   document.documentElement.classList.add('js-enabled');
 
+  const YANDEX_METRICA_ID = 111111111;
+
+  const loadYandexMetrica = () => {
+    if (!YANDEX_METRICA_ID || typeof window.ym === 'function') {
+      return;
+    }
+
+    window.ym = window.ym || function ymStub() {
+      (window.ym.a = window.ym.a || []).push(arguments);
+    };
+    window.ym.l = 1 * new Date();
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://mc.yandex.ru/metrika/tag.js';
+
+    const firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
+
+    window.ym(YANDEX_METRICA_ID, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true,
+    });
+  };
+
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookieBannerAccept = document.getElementById('cookie-banner-accept');
+  const hasCookieConsent = localStorage.getItem('cookieConsent') === 'true';
+
+  if (hasCookieConsent) {
+    loadYandexMetrica();
+  }
+
+  if (cookieBanner && cookieBannerAccept && !hasCookieConsent) {
+    window.setTimeout(() => {
+      cookieBanner.classList.remove('hidden');
+      cookieBanner.classList.add('cookie-banner-visible');
+    }, 1500);
+
+    cookieBannerAccept.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'true');
+      loadYandexMetrica();
+
+      cookieBanner.classList.remove('cookie-banner-visible');
+      cookieBanner.classList.add('cookie-banner-hidden');
+
+      window.setTimeout(() => {
+        cookieBanner.classList.add('hidden');
+      }, 300);
+    });
+  }
+
   const contactForm = document.getElementById('contact-form');
 
   if (contactForm) {
@@ -51,6 +105,10 @@
         }
 
         contactForm.reset();
+
+        if (typeof window.ym === 'function') {
+          window.ym(YANDEX_METRICA_ID, 'reachGoal', 'contact_form_success');
+        }
 
         if (statusNode) {
           statusNode.textContent = 'Заявка отправлена. Мы свяжемся с вами.';

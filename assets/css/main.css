@@ -25,6 +25,13 @@
     @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
+  .cookie-banner-visible {
+    animation: cookie-banner-in 0.35s ease-out both;
+  }
+
+  .cookie-banner-hidden {
+    animation: cookie-banner-out 0.3s ease-in both;
+  }
   .site-section {
     @apply py-20 sm:py-32;
   }
@@ -59,6 +66,30 @@
   }
 }
 
+@keyframes cookie-banner-in {
+  from {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cookie-banner-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .js-enabled .fade-in,
   .js-enabled .fade-in.is-visible {
@@ -74,4 +105,42 @@
 
 .skip-link:focus {
   @apply not-sr-only fixed left-4 top-4 z-[100] rounded-md bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg ring-2 ring-indigo-500;
+}
+
+
+.legal-page {
+  @apply mx-auto max-w-3xl rounded-3xl bg-white p-6 text-base leading-8 text-gray-700 shadow-sm ring-1 ring-gray-200 sm:p-10;
+}
+
+.legal-page h1 {
+  @apply mb-8 font-display text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl;
+}
+
+.legal-page h2 {
+  @apply mt-12 border-t border-gray-200 pt-8 text-2xl font-bold tracking-tight text-gray-950;
+}
+
+.legal-page p {
+  @apply mt-5;
+}
+
+.legal-page ul {
+  @apply mt-5 space-y-3 pl-0;
+}
+
+.legal-page li {
+  @apply relative list-none pl-7;
+}
+
+.legal-page li::before {
+  content: "";
+  @apply absolute left-0 top-[0.8em] h-1.5 w-1.5 rounded-full bg-indigo-600;
+}
+
+.legal-page a {
+  @apply font-semibold text-indigo-600 underline underline-offset-4 hover:text-indigo-500;
+}
+
+.legal-page strong {
+  @apply font-semibold text-gray-900;
 }

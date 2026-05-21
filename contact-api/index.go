@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -133,6 +135,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if err := sendTelegramNotification(ctx, id, req, createdAt, ip); err != nil {
+		log.Printf("telegram notification error: %v", err)
+	}
+
 	writeJSON(w, http.StatusOK, ContactResponse{
 		OK: true,
 		ID: id,
@@ -219,4 +225,70 @@ func clientIP(r *http.Request) string {
 	}
 
 	return r.RemoteAddr
+}
+
+type TelegramMessage struct {
+	ChatID    string `json:"chat_id"`
+	Text      string `json:"text"`
+	ParseMode string `json:"parse_mode,omitempty"`
+}
+
+func sendTelegramNotification(ctx context.Context, requestID string, req ContactRequest, createdAt time.Time, ip string) error {
+	botToken := strings.TrimSpace(os.Getenv("TELEGRAM_BOT_TOKEN"))
+	chatID := strings.TrimSpace(os.Getenv("TELEGRAM_CHAT_ID"))
+
+	if botToken == "" || chatID == "" {
+		return nil
+	}
+
+	text := fmt.Sprintf(
+		"<b>Новая заявка с сайта</b>\n\n"+
+			"<b>ID:</b> %s\n"+
+			"<b>Время:</b> %s\n"+
+			"<b>Тип сайта:</b> %s\n"+
+			"<b>Сообщение:</b>\n%s\n\n",
+		escapeTelegramHTML(requestID),
+		escapeTelegramHTML(createdAt.Format("2006-01-02 15:04:05 UTC")),
+		escapeTelegramHTML(req.WebsiteType),
+		escapeTelegramHTML(req.Message),
+	)
+
+	payload := TelegramMessage{
+		ChatID:    chatID,
+		Text:      text,
+		ParseMode: "HTML",
+	}
+
+	body, err := json.Marshal(payload)
+	if err != nil {
+		return err
+	}
+
+	requestURL := "https://api.telegram.org/bot" + botToken + "/sendMessage"
+
+	httpReq, err := http.NewRequestWithContext(ctx, http.MethodPost, requestURL, bytes.NewReader(body))
+	if err != nil {
+		return err
+	}
+
+	httpReq.Header.Set("Content-Type", "application/json")
+
+	resp, err := http.DefaultClient.Do(httpReq)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return fmt.Errorf("telegram sendMessage failed with status %s", resp.Status)
+	}
+
+	return nil
+}
+
+func escapeTelegramHTML(value string) string {
+	value = strings.ReplaceAll(value, "&", "&amp;")
+	value = strings.ReplaceAll(value, "<", "&lt;")
+	value = strings.ReplaceAll(value, ">", "&gt;")
+	return value
 }

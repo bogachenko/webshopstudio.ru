@@ -1,0 +1,38 @@
+<div id="cookie-banner" class="fixed bottom-4 left-4 right-4 z-50 hidden md:bottom-8 md:left-auto md:right-8 md:max-w-sm">
+  <div class="relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 p-6 text-white shadow-2xl">
+    <div class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-indigo-500 opacity-20 blur-3xl"></div>
+
+    <div class="relative z-10 flex items-center gap-3">
+      <div class="rounded-xl bg-indigo-500/20 p-2">
+        <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
+          <path d="M8.5 8.5v.01" />
+          <path d="M16 15.5v.01" />
+          <path d="M12 12v.01" />
+          <path d="M11 17v.01" />
+          <path d="M7 14v.01" />
+        </svg>
+      </div>
+      <h3 class="text-lg font-semibold">Мы используем cookies</h3>
+    </div>
+
+    <p class="relative z-10 text-sm leading-relaxed text-slate-300">
+      Мы используем cookies для корректной работы сайта, улучшения пользовательского опыта и веб-аналитики.
+      Нажимая «Понятно», вы соглашаетесь с использованием cookies и обработкой данных с помощью Яндекс Метрики.
+      Подробнее:
+      <a href="/privacy/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">политика обработки персональных данных</a>
+      и
+      <a href="/yandex-metrica-consent/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">согласие на обработку данных Яндекс Метрикой</a>.
+    </p>
+
+    <div class="relative z-10 mt-2">
+      <button
+        id="cookie-banner-accept"
+        type="button"
+        class="w-full rounded-xl bg-indigo-500 px-4 py-2.5 font-medium text-white transition-colors duration-200 hover:bg-indigo-400 active:scale-95"
+      >
+        Понятно
+      </button>
+    </div>
+  </div>
+</div>

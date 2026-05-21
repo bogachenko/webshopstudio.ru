@@ -13,7 +13,8 @@
     </main>
 
     {{ partial "footer.html" . }}
-
+    {{ partial "cookie-banner.html" . }}
+    {{ partial "yandex-metrica.html" . }}
     {{ $js := resources.Get "js/main.js" }}
     {{ if hugo.IsProduction }}
       {{ $js = $js | fingerprint }}

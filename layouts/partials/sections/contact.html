@@ -38,9 +38,29 @@
           </div>
         </div>
       </div>
-      <div class="mt-10">
-        <button type="submit" class="block w-full rounded-md bg-indigo-500 px-3.5 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Обсудить проект</button>
+    <div class="mt-8 flex gap-3">
+      <div class="flex h-6 items-center">
+        <input
+          id="personal-data-consent"
+          name="personal-data-consent"
+          type="checkbox"
+          required
+          class="h-4 w-4 rounded border-white/20 bg-white/5 text-indigo-500 focus:ring-indigo-500"
+        >
       </div>
+        <label for="personal-data-consent" class="text-sm leading-6 text-gray-300">
+          Я даю согласие на обработку персональных данных и подтверждаю, что ознакомлен с
+          <a href="/personal-data-consent/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">согласием на обработку персональных данных</a>
+          и
+          <a href="/privacy/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">политикой обработки персональных данных</a>.
+        </label>
+      </div>
+
+    <div class="mt-10">
+      <button type="submit" class="block w-full rounded-md bg-indigo-500 px-3.5 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Обсудить проект</button>
+    </div>
+
+    <p id="contact-form-status" class="text-center text-sm leading-6 text-gray-300"></p>
     </form>
   </div>
 </section>
