@@ -1,0 +1,11 @@
+baseURL = "/"
+languageCode = "en"
+title = "Web Studio Launch"
+
+[taxonomies]
+
+[outputs]
+  home = ["HTML"]
+
+[params]
+  description = "Single-page launch site scaffolded with Hugo."
