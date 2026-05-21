@@ -1,5 +1,29 @@
-<header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur">
-  <nav aria-label="Primary navigation" class="py-4">
-    {{ partial "ui/container.html" (dict "class" "flex flex-wrap items-center gap-x-6 gap-y-3" "inner" "<a href='/' class='font-display text-lg font-bold text-slate-900'>WebStudio</a><a href='#services' class='text-sm font-medium text-slate-700 hover:text-slate-900'>Services</a><a href='#turnkey' class='text-sm font-medium text-slate-700 hover:text-slate-900'>Process</a><a href='#portfolio' class='text-sm font-medium text-slate-700 hover:text-slate-900'>Portfolio</a><a href='#pricing' class='text-sm font-medium text-slate-700 hover:text-slate-900'>Pricing</a><a href='#faq' class='text-sm font-medium text-slate-700 hover:text-slate-900'>FAQ</a><a href='#contact' class='text-sm font-medium text-slate-700 hover:text-slate-900'>Contact</a>") }}
-  </nav>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md">
+  <div class="site-container">
+    <nav class="flex items-center justify-between py-4" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 flex items-center gap-2 p-1.5">
+          <span class="sr-only">Web Studio</span>
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
+            {{ partial "icons/code.html" (dict "class" "h-5 w-5") }}
+          </div>
+          <span class="text-xl font-bold tracking-tight text-gray-900">WebStudio</span>
+        </a>
+      </div>
+
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#services" class="text-sm font-semibold leading-6 text-gray-900 transition-colors hover:text-indigo-600">Services</a>
+        <a href="#turnkey" class="text-sm font-semibold leading-6 text-gray-900 transition-colors hover:text-indigo-600">Process</a>
+        <a href="#portfolio" class="text-sm font-semibold leading-6 text-gray-900 transition-colors hover:text-indigo-600">Portfolio</a>
+        <a href="#pricing" class="text-sm font-semibold leading-6 text-gray-900 transition-colors hover:text-indigo-600">Pricing</a>
+        <a href="#faq" class="text-sm font-semibold leading-6 text-gray-900 transition-colors hover:text-indigo-600">FAQ</a>
+      </div>
+
+      <div class="flex flex-1 justify-end">
+        <a href="#contact" class="flex items-center gap-2 rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold leading-6 text-white transition-colors hover:bg-gray-800">
+          Get Started <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </nav>
+  </div>
 </header>
