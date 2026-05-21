@@ -1,0 +1,6 @@
+{
+  "name": "Web Studio Launch",
+  "description": "A landing page for a web studio building turnkey websites and WordPress online stores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
