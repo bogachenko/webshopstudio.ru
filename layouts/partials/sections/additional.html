@@ -1,12 +1,12 @@
-<section id="additional" class="bg-gray-50 py-20 sm:py-32">
+<section id="additional" class="site-section site-section-gray">
   <div class="site-container">
     <div class="fade-in mx-auto max-w-2xl text-center" style="--fade-delay: 0s">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Additional services</h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600">We provide full support for your online business beyond just website creation.</p>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ site.Data.additional.heading }}</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">{{ site.Data.additional.description }}</p>
     </div>
 
     <div class="fade-in mx-auto mt-16 max-w-4xl columns-1 gap-8 sm:columns-2" style="--fade-delay: 0.1s">
-      {{ range site.Data.additional.services }}
+      {{ range site.Data.additional.items }}
         <div class="flex break-inside-avoid items-center gap-3 py-3">
           {{ partial "icons/check-circle.html" (dict "class" "h-5 w-5 shrink-0 text-indigo-500") }}
           <span class="text-gray-700">{{ . }}</span>

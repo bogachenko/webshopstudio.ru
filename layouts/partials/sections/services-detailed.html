@@ -2,7 +2,7 @@
   <div class="site-container">
     <div class="mx-auto max-w-7xl">
       <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
-        {{ range $index, $service := index site.Data "services-detailed" }}
+        {{ range $index, $service := (index site.Data "services-detailed").items }}
           <article class="fade-in flex h-full flex-col rounded-3xl bg-gray-50 p-8 sm:p-10" style="--fade-delay: {{ mul $index 0.1 }}s">
             <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-600 shadow-xl shadow-indigo-600/20">
               {{ partial (printf "icons/%s.html"  $service.icon) (dict "class" "h-7 w-7 text-white") }}
