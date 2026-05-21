@@ -60,6 +60,7 @@
   if (contactForm) {
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const statusNode = document.getElementById('contact-form-status');
+    const consentCheckbox = document.getElementById('personal-data-consent');
 
     contactForm.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -78,6 +79,16 @@
           statusNode.textContent = 'Укажите телефон или мессенджер.';
           statusNode.className = 'text-center text-sm leading-6 text-red-600';
         }
+        return;
+      }
+
+      if (consentCheckbox && !consentCheckbox.checked) {
+        if (statusNode) {
+          statusNode.textContent = 'Необходимо дать согласие на обработку персональных данных.';
+          statusNode.className = 'text-center text-sm leading-6 text-red-600';
+        }
+
+        consentCheckbox.focus();
         return;
       }
 
