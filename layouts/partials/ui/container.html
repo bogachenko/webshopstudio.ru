@@ -1,4 +1,4 @@
 {{- $class := .class | default "" -}}
 <div class="site-container{{ if $class }} {{ $class }}{{ end }}">
-  {{- .inner -}}
+  {{- .inner | safeHTML -}}
 </div>
