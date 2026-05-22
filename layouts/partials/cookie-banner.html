@@ -2,7 +2,19 @@
   <div class="relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 p-6 text-white shadow-2xl">
     <div class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-indigo-500 opacity-20 blur-3xl"></div>
 
-    <div class="relative z-10 flex items-center gap-3">
+    <button
+      id="cookie-banner-decline"
+      type="button"
+      class="absolute right-4 top-4 text-slate-400 transition-colors hover:text-white"
+      aria-label="Закрыть уведомление о cookies"
+    >
+      <svg aria-hidden="true" focusable="false" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+    </button>
+
+    <div class="relative z-10 flex items-center gap-3 pr-8">
       <div class="rounded-xl bg-indigo-500/20 p-2">
         <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
@@ -18,20 +30,27 @@
 
     <p class="relative z-10 text-sm leading-relaxed text-slate-300">
       Мы используем cookies для корректной работы сайта, улучшения пользовательского опыта и веб-аналитики.
-      Нажимая «Понятно», вы соглашаетесь с использованием cookies и обработкой данных с помощью Яндекс Метрики.
+      Нажимая «Принять», вы соглашаетесь с использованием cookies и обработкой данных с помощью Яндекс Метрики.
       Подробнее:
       <a href="/privacy/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">политика обработки персональных данных</a>
       и
       <a href="/yandex-metrica-consent/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">согласие на обработку данных Яндекс Метрикой</a>.
     </p>
 
-    <div class="relative z-10 mt-2">
+    <div class="relative z-10 mt-2 flex gap-3">
       <button
         id="cookie-banner-accept"
         type="button"
-        class="w-full rounded-xl bg-indigo-500 px-4 py-2.5 font-medium text-white transition-colors duration-200 hover:bg-indigo-400 active:scale-95"
+        class="flex-1 rounded-xl bg-indigo-500 px-4 py-2.5 font-medium text-white transition-colors duration-200 hover:bg-indigo-400 active:scale-95"
       >
-        Понятно
+        Принять
+      </button>
+      <button
+        id="cookie-banner-decline-button"
+        type="button"
+        class="flex-1 rounded-xl bg-slate-800 px-4 py-2.5 font-medium text-white transition-colors duration-200 hover:bg-slate-700 active:scale-95"
+      >
+        Отклонить
       </button>
     </div>
   </div>

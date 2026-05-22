@@ -246,11 +246,9 @@ func sendTelegramNotification(ctx context.Context, requestID string, req Contact
 			"<b>ID:</b> %s\n"+
 			"<b>Время:</b> %s\n"+
 			"<b>Тип сайта:</b> %s\n"+
-			"<b>Сообщение:</b>\n%s\n\n",
-		escapeTelegramHTML(requestID),
+			escapeTelegramHTML(requestID),
 		escapeTelegramHTML(createdAt.Format("2006-01-02 15:04:05 UTC")),
 		escapeTelegramHTML(req.WebsiteType),
-		escapeTelegramHTML(req.Message),
 	)
 
 	payload := TelegramMessage{

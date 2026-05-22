@@ -1,0 +1,29 @@
+{{ $features := index site.Data "usp-features" }}
+
+<section class="site-section site-section-white !pt-0" aria-labelledby="usp-features-title">
+  <div class="site-container">
+    <div class="mx-auto max-w-2xl text-center lg:max-w-none">
+      <div class="fade-in">
+        <h2 id="usp-features-title" class="sr-only">Почему выбирают нас</h2>
+      </div>
+
+      <div class="mx-auto grid max-w-xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+        {{ range $index, $feature := $features.items }}
+          <article class="fade-in flex h-full flex-col items-center rounded-3xl bg-gray-50 p-8 text-center ring-1 ring-gray-100 transition-shadow hover:shadow-md" style="--fade-delay: {{ mul $index 0.1 }}s">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-600 text-white shadow-lg shadow-indigo-600/20">
+              {{ partial (printf "icons/%s.html" $feature.icon) (dict "class" "h-7 w-7") }}
+            </div>
+
+            <h3 class="text-xl font-bold leading-7 text-gray-900">
+              {{ $feature.title }}
+            </h3>
+
+            <p class="mt-4 text-base leading-relaxed text-gray-600">
+              {{ $feature.description }}
+            </p>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
