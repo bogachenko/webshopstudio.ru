@@ -14,11 +14,11 @@
 
     {{ partial "footer.html" . }}
     {{ partial "cookie-banner.html" . }}
-    {{ partial "yandex-metrica.html" . }}
     {{ $js := resources.Get "js/main.js" }}
     {{ if hugo.IsProduction }}
       {{ $js = $js | fingerprint }}
     {{ end }}
     <script src="{{ $js.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
+    
   </body>
 </html>

@@ -1,7 +1,8 @@
 (() => {
   document.documentElement.classList.add('js-enabled');
 
-  const YANDEX_METRICA_ID = 111111111;
+  const YANDEX_METRICA_ID = 109371117;
+  window.dataLayer = window.dataLayer || [];
 
   const loadYandexMetrica = () => {
     if (!YANDEX_METRICA_ID || typeof window.ym === 'function') {
@@ -21,9 +22,13 @@
     firstScript.parentNode.insertBefore(script, firstScript);
 
     window.ym(YANDEX_METRICA_ID, 'init', {
+      ssr: true,
       clickmap: true,
-      trackLinks: true,
+      ecommerce: 'dataLayer',
+      referrer: document.referrer,
+      url: location.href,
       accurateTrackBounce: true,
+      trackLinks: true,
       webvisor: true,
     });
   };
@@ -76,7 +81,15 @@
 
       if (!payload.contactInfo) {
         if (statusNode) {
-          statusNode.textContent = 'Укажите телефон или мессенджер.';
+          statusNode.textContent = 'Укажите email.';
+          statusNode.className = 'text-center text-sm leading-6 text-red-600';
+        }
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.contactInfo)) {
+        if (statusNode) {
+          statusNode.textContent = 'Укажите корректный email.';
           statusNode.className = 'text-center text-sm leading-6 text-red-600';
         }
         return;

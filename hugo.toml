@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://webshopstudio.ru/"
 languageCode = "ru"
 title = "WebСтудия"
 
@@ -13,3 +13,5 @@ siteName = "WebStudio"
 ogTitle = "WebStudio — сайты и интернет-магазины под ключ"
 ogDescription = "Создаём сайты, лендинги, корпоративные сайты и интернет-магазины на WordPress + WooCommerce под ключ: домен, хостинг, настройка и передача клиенту."
 twitterCard = "summary"
+
+enableRobotsTXT = true

@@ -14,9 +14,17 @@
           </div>
         </div>
         <div class="sm:col-span-2">
-          <label for="contact-info" class="block text-sm font-semibold leading-6 text-white">Телефон или мессенджер</label>
+          <label for="contact-info" class="block text-sm font-semibold leading-6 text-white">Email</label>
           <div class="mt-2.5">
-            <input type="text" name="contact-info" id="contact-info" placeholder="+7 (999) 000-00-00 или @telegram" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+            <input
+              type="email"
+              name="contact-info"
+              id="contact-info"
+              autocomplete="email"
+              required
+              placeholder="name@example.com"
+              class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+            />
           </div>
         </div>
         <div class="sm:col-span-2">
