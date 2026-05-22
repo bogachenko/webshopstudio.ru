@@ -1,4 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap");
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter/inter.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space-grotesk/space-grotesk.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -32,6 +47,7 @@
   .cookie-banner-hidden {
     animation: cookie-banner-out 0.3s ease-in both;
   }
+
   .site-section {
     @apply py-20 sm:py-32;
   }
@@ -106,7 +122,6 @@
 .skip-link:focus {
   @apply not-sr-only fixed left-4 top-4 z-[100] rounded-md bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg ring-2 ring-indigo-500;
 }
-
 
 .legal-page {
   @apply mx-auto max-w-3xl rounded-3xl bg-white p-6 text-base leading-8 text-gray-700 shadow-sm ring-1 ring-gray-200 sm:p-10;
