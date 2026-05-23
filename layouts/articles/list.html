@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="site-section">
+  <div class="site-container">
+    <div class="articles-hero reveal-on-scroll rounded-3xl border border-white/70 p-8 shadow-[0_30px_70px_-40px_rgba(15,23,42,0.7)] sm:p-12">
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-indigo-700">Экспертиза</p>
+      <h1 class="mt-4 font-display text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl">{{ .Title }}</h1>
+      <p class="mt-5 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">{{ .Params.description | default .Summary }}</p>
+    </div>
+
+    <div class="articles-grid mt-12 grid gap-6 md:grid-cols-2">
+      {{ range .Pages.ByDate.Reverse }}
+        <article class="article-card reveal-on-scroll rounded-3xl border border-white/65 bg-white/75 p-7 shadow-[0_25px_65px_-45px_rgba(15,23,42,0.75)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:shadow-[0_35px_75px_-45px_rgba(79,70,229,0.55)]">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-indigo-600">{{ .Date.Format "02 Jan 2006" }}</p>
+          <h2 class="mt-4 text-2xl font-bold tracking-tight text-slate-950">{{ .Title }}</h2>
+          <p class="mt-4 text-slate-600">{{ .Summary | plainify }}</p>
+          <a href="{{ .RelPermalink }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 hover:text-indigo-500">Читать статью <span aria-hidden="true">→</span></a>
+        </article>
+      {{ else }}
+        <article class="article-card rounded-3xl border border-white/65 bg-white/80 p-7 shadow-sm backdrop-blur">
+          <h2 class="text-2xl font-bold text-slate-950">Скоро здесь появятся статьи</h2>
+          <p class="mt-3 text-slate-600">Мы уже готовим материалы о SEO, скорости и повышении конверсии в WooCommerce.</p>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -205,3 +205,24 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+
+.articles-hero {
+  background:
+    linear-gradient(145deg, color-mix(in oklab, #ffffff 84%, #a5b4fc 16%), color-mix(in oklab, #ffffff 90%, #67e8f9 10%));
+}
+
+.articles-grid {
+  container-type: inline-size;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+}
+
+@container (min-width: 44rem) {
+  .article-card {
+    min-block-size: 18rem;
+  }
+}
