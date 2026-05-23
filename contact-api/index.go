@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
 	"log"
 	"net"
 	"net/http"
@@ -237,8 +238,12 @@ func sendTelegramNotification(ctx context.Context, requestID string, req Contact
 	botToken := strings.TrimSpace(os.Getenv("TELEGRAM_BOT_TOKEN"))
 	chatID := strings.TrimSpace(os.Getenv("TELEGRAM_CHAT_ID"))
 
-	if botToken == "" || chatID == "" {
-		return nil
+	if botToken == "" {
+		return errors.New("TELEGRAM_BOT_TOKEN is empty")
+	}
+
+	if chatID == "" {
+		return errors.New("TELEGRAM_CHAT_ID is empty")
 	}
 
 	text := fmt.Sprintf(
@@ -246,9 +251,17 @@ func sendTelegramNotification(ctx context.Context, requestID string, req Contact
 			"<b>ID:</b> %s\n"+
 			"<b>Время:</b> %s\n"+
 			"<b>Тип сайта:</b> %s\n"+
-			escapeTelegramHTML(requestID),
+			"<b>Имя:</b> %s\n"+
+			"<b>Контакт:</b> %s\n"+
+			"<b>Сообщение:</b> %s\n"+
+			"<b>IP:</b> %s",
+		escapeTelegramHTML(requestID),
 		escapeTelegramHTML(createdAt.Format("2006-01-02 15:04:05 UTC")),
 		escapeTelegramHTML(req.WebsiteType),
+		escapeTelegramHTML(req.Name),
+		escapeTelegramHTML(req.ContactInfo),
+		escapeTelegramHTML(req.Message),
+		escapeTelegramHTML(ip),
 	)
 
 	payload := TelegramMessage{
@@ -277,8 +290,10 @@ func sendTelegramNotification(ctx context.Context, requestID string, req Contact
 	}
 	defer resp.Body.Close()
 
+	respBody, _ := io.ReadAll(resp.Body)
+
 	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-		return fmt.Errorf("telegram sendMessage failed with status %s", resp.Status)
+		return fmt.Errorf("telegram sendMessage failed with status %s: %s", resp.Status, string(respBody))
 	}
 
 	return nil
