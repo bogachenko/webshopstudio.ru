@@ -184,6 +184,61 @@
   @apply font-semibold text-gray-900;
 }
 
+
+.legal-page h3 {
+  @apply mt-8 text-xl font-semibold text-gray-900;
+  text-wrap: balance;
+}
+
+.legal-page h1,
+.legal-page h2 {
+  text-wrap: balance;
+}
+
+.legal-page p,
+.legal-page li {
+  text-wrap: pretty;
+}
+
+.legal-page hr {
+  @apply my-10 border-0 border-t border-dashed border-gray-300;
+}
+
+.legal-page pre {
+  @apply mt-5 overflow-x-auto rounded-2xl bg-slate-950 p-4 text-sm leading-6 text-slate-100;
+}
+
+.legal-page code {
+  @apply rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em] text-slate-900;
+}
+
+.legal-page pre code {
+  @apply bg-transparent p-0 text-slate-100;
+}
+
+.legal-page table {
+  @apply mt-6 w-full overflow-hidden rounded-2xl border border-gray-200 text-sm leading-6;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.legal-page thead th {
+  @apply bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900;
+  text-wrap: balance;
+}
+
+.legal-page tbody td {
+  @apply border-t border-gray-200 px-4 py-3 align-top;
+}
+
+.legal-page tbody tr:nth-child(even) td {
+  @apply bg-gray-50/60;
+}
+
+.legal-page blockquote {
+  @apply mt-6 rounded-r-2xl border-l-4 border-indigo-400 bg-indigo-50 px-5 py-3 text-slate-800;
+}
+
 @supports (font-size: 1cqi) {
   .fluid-title {
     font-size: clamp(2rem, 6cqi, 4.25rem);
