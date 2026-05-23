@@ -20,7 +20,7 @@ import { Contact } from './components/sections/Contact';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white selection:bg-indigo-100 selection:text-indigo-900 font-sans">
+    <div className="min-h-screen selection:bg-indigo-100 selection:text-indigo-900 font-sans antialiased">
       <Navbar />
       <main>
         <Hero />

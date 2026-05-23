@@ -5,30 +5,34 @@
 
   <div class="site-container">
     <div class="mx-auto max-w-4xl text-center">
-      <h1 class="fade-in text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl" style="--fade-delay: 0s">Создаём сайты и интернет-магазины под ключ</h1>
-      <p class="fade-in mt-6 text-lg leading-8 text-gray-600 sm:text-xl" style="--fade-delay: 0.1s">Разрабатываем интернет-магазины на WordPress + WooCommerce, корпоративные сайты, лендинги и сайты-визитки. Берём на себя домен, хостинг, установку, настройку и передачу готового сайта клиенту.</p>
+      <div class="fade-in mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white px-3 py-1.5 text-xs font-medium text-slate-600" style="--fade-delay: 0s">
+        <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+        Сайты под ключ с фокусом на заявки
+      </div>
+      <h1 class="fade-in fluid-title text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl" style="--fade-delay: 0.05s">Создаём сайты и интернет-магазины под ключ</h1>
+      <p class="fade-in mt-5 text-lg leading-8 text-slate-600 sm:text-xl" style="--fade-delay: 0.1s">Разрабатываем сайты на WordPress + WooCommerce: от структуры и дизайна до домена, хостинга и передачи проекта клиенту.</p>
 
-      <div class="fade-in mt-10 flex flex-col items-center justify-center gap-y-6 sm:flex-row sm:gap-x-8" style="--fade-delay: 0.2s">
+      <div class="fade-in mt-8 flex flex-col items-center justify-center gap-y-5" style="--fade-delay: 0.2s">
         <div class="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
-          <a href="#contact" class="flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-4 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          <a href="#contact" class="flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition-colors hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
             Обсудить проект
             {{ partial "icons/arrow-right.html" (dict "class" "h-4 w-4") }}
           </a>
-          <a href="#pricing" class="flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all hover:bg-gray-50">
+          <a href="#pricing" class="flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 transition-colors hover:bg-slate-50">
             Рассчитать стоимость
           </a>
         </div>
 
-        <div class="flex flex-col gap-2 text-left text-sm text-gray-500 sm:border-l sm:border-gray-200 sm:pl-8">
-          <div class="flex items-start gap-2">
+        <div class="feature-grid grid w-full max-w-4xl grid-cols-1 gap-2 rounded-2xl border border-slate-200 bg-slate-50/70 p-3 text-left text-sm text-slate-600 sm:grid-cols-3 sm:gap-0 sm:bg-white sm:p-4">
+          <div class="flex items-start gap-2 rounded-xl p-3 sm:rounded-none sm:p-4 sm:pr-6 sm:border-r sm:border-slate-200/80">
             {{ partial "icons/check-circle.html" (dict "class" "mt-0.5 h-4 w-4 shrink-0 text-emerald-500") }}
             <span>Сайт готов к использованию</span>
           </div>
-          <div class="flex items-start gap-2">
+          <div class="flex items-start gap-2 rounded-xl p-3 sm:rounded-none sm:p-4 sm:pr-6 sm:border-r sm:border-slate-200/80">
             {{ partial "icons/check-circle.html" (dict "class" "mt-0.5 h-4 w-4 shrink-0 text-emerald-500") }}
             <span>Домен и хостинг оформляются на клиента</span>
           </div>
-          <div class="flex items-start gap-2">
+          <div class="flex items-start gap-2 rounded-xl p-3 sm:rounded-none sm:p-4 sm:pr-6">
             {{ partial "icons/check-circle.html" (dict "class" "mt-0.5 h-4 w-4 shrink-0 text-emerald-500") }}
             <span>Передаём доступы и объясняем, как пользоваться сайтом</span>
           </div>

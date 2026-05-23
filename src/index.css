@@ -24,3 +24,36 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  background:
+    radial-gradient(60rem 60rem at 8% -10%, color-mix(in oklab, #6366f1 22%, transparent), transparent 60%),
+    radial-gradient(45rem 45rem at 92% 8%, color-mix(in oklab, #22d3ee 18%, transparent), transparent 58%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2ff 45%, #ffffff 100%);
+  color: #0f172a;
+}
+
+@supports (font-size: 1cqi) {
+  .fluid-title {
+    font-size: clamp(2.1rem, 6.8cqi, 4.8rem);
+  }
+}
+
+.feature-grid {
+  container-type: inline-size;
+}
+
+@container (min-width: 38rem) {
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

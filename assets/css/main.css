@@ -26,8 +26,9 @@
     scroll-behavior: smooth;
   }
 
+
   body {
-    @apply m-0 font-sans text-slate-900 bg-white antialiased;
+    @apply m-0 bg-slate-50 font-sans text-slate-900 antialiased;
   }
 
   ::selection {
@@ -158,4 +159,26 @@
 
 .legal-page strong {
   @apply font-semibold text-gray-900;
+}
+
+@supports (font-size: 1cqi) {
+  .fluid-title {
+    font-size: clamp(2rem, 6cqi, 4.25rem);
+  }
+}
+
+.feature-grid {
+  container-type: inline-size;
+}
+
+@container (min-width: 38rem) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 56rem) {
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

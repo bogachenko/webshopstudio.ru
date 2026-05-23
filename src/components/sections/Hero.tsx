@@ -10,29 +10,33 @@ export function Hero() {
       </div>
 
       <Container>
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           <FadeIn>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-4 py-2 text-xs font-medium text-slate-700 shadow-lg shadow-indigo-500/10 backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+              Modern websites that convert visitors into customers
+            </div>
+            <h1 className="fluid-title text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
               We create turnkey websites and online stores
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-xl">
+            <p className="mt-6 text-lg leading-8 text-slate-600 sm:text-xl">
               We develop online stores on WordPress + WooCommerce, corporate websites, landing pages, and business card websites. We handle the domain, hosting, installation, setup, and handover of the finished website to the client.
             </p>
           </FadeIn>
           
           <FadeIn delay={0.2} className="mt-10 flex flex-col items-center justify-center gap-y-6 sm:flex-row sm:gap-x-8">
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <a href="#contact" className="rounded-full bg-indigo-600 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 flex items-center justify-center gap-2 transition-all">
+              <a href="#contact" className="rounded-full bg-gradient-to-r from-indigo-600 to-cyan-500 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-indigo-500/35 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 flex items-center justify-center gap-2 transition-all">
                 Discuss a project <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#pricing" className="rounded-full bg-white px-8 py-4 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 flex items-center justify-center transition-all">
+              <a href="#pricing" className="rounded-full bg-white/80 px-8 py-4 text-sm font-semibold text-slate-900 shadow-md ring-1 ring-inset ring-white/60 hover:bg-white flex items-center justify-center transition-all backdrop-blur">
                 Calculate the cost
               </a>
             </div>
             
-            <div className="flex flex-col gap-2 text-sm text-gray-500 text-left sm:border-l sm:border-gray-200 sm:pl-8">
+            <div className="feature-grid grid grid-cols-1 gap-2 rounded-2xl border border-white/70 bg-white/70 p-4 text-sm text-slate-600 text-left shadow-lg shadow-slate-900/5 backdrop-blur sm:pl-8">
               <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> Website ready to use</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> Domain and hosting registered in the client&apos;s name</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> We hand over access and explain how to use it</div>
