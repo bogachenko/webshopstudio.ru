@@ -29,6 +29,10 @@
 
   body {
     @apply m-0 bg-slate-50 font-sans text-slate-900 antialiased;
+    background:
+      radial-gradient(60rem 60rem at 8% -10%, color-mix(in oklab, #6366f1 22%, transparent), transparent 60%),
+      radial-gradient(45rem 45rem at 92% 8%, color-mix(in oklab, #22d3ee 18%, transparent), transparent 58%),
+      linear-gradient(180deg, #f8fafc 0%, #eef2ff 45%, #ffffff 100%);
   }
 
   ::selection {
@@ -54,7 +58,7 @@
   }
 
   .site-section-white {
-    @apply bg-white;
+    @apply bg-transparent;
   }
 
   .site-section-gray {
@@ -80,6 +84,25 @@
   .js-enabled .fade-in.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal-on-scroll {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 28%;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(28px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 }
 

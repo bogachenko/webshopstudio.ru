@@ -3,8 +3,8 @@ import { Container } from '../ui/Layout';
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100">
-      <Container className="py-12 md:flex md:items-center md:justify-between">
+    <footer className="pb-6">
+      <Container className="rounded-3xl border border-white/70 bg-white/70 py-12 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.5)] backdrop-blur md:flex md:items-center md:justify-between">
         <div className="flex justify-center flex-col items-center gap-4 md:flex-row md:justify-start">
           <a href="#" className="flex items-center gap-2">
             <div className="flex h-6 w-6 items-center justify-center rounded-md bg-indigo-600">

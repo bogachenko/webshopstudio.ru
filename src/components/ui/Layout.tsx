@@ -39,7 +39,7 @@ export function Section({
   };
 
   return (
-    <section id={id} className={cn('py-20 sm:py-32', bgClasses[bg], className)}>
+    <section id={id} className={cn('reveal-on-scroll py-20 sm:py-32', bgClasses[bg], className)}>
       {children}
     </section>
   );

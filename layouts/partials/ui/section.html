@@ -6,6 +6,6 @@
   {{- $variantClass = "site-section-dark" -}}
 {{- end -}}
 {{- $sectionClass := .class | default "" -}}
-<section id="{{ .id }}" class="site-section {{ $variantClass }}{{ if $sectionClass }} {{ $sectionClass }}{{ end }}">
+<section id="{{ .id }}" class="reveal-on-scroll site-section {{ $variantClass }}{{ if $sectionClass }} {{ $sectionClass }}{{ end }}">
   {{ partial "ui/container.html" (dict "class" (.containerClass | default "") "inner" .inner) }}
 </section>
