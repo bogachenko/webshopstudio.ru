@@ -235,6 +235,21 @@
   @apply bg-gray-50/60;
 }
 
+@media (max-width: 48rem) {
+  .legal-page table {
+    display: block;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .legal-page th,
+  .legal-page td {
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+}
+
 .legal-page blockquote {
   @apply mt-6 rounded-r-2xl border-l-4 border-indigo-400 bg-indigo-50 px-5 py-3 text-slate-800;
 }
