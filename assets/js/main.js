@@ -90,6 +90,8 @@
   if (contactForm) {
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const statusNode = document.getElementById('contact-form-status');
+    const submitButtonLabel = submitButton?.dataset.submitLabel || submitButton?.textContent || 'Отправить заявку';
+    const submitButtonSubmittingLabel = submitButton?.dataset.submittingLabel || 'Отправляем...';    
     const consentCheckbox = document.getElementById('personal-data-consent');
 
     contactForm.addEventListener('submit', async (event) => {
@@ -132,7 +134,7 @@
 
       if (submitButton) {
         submitButton.disabled = true;
-        submitButton.textContent = 'Отправляем...';
+        submitButton.textContent = submitButtonSubmittingLabel;
       }
 
       if (statusNode) {
@@ -171,7 +173,7 @@
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = 'Отправить заявку';
+          submitButton.textContent = submitButtonLabel;
         }
       }
     });

@@ -1,12 +1,13 @@
+{{ $faq := site.Data.faq }}
 <section id="faq" class="site-section site-section-white">
   <div class="site-container">
     <div class="fade-in mx-auto mb-16 max-w-2xl text-center" style="--fade-delay: 0s">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Частые вопросы</h2>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $faq.heading }}</h2>
     </div>
 
     <div class="mx-auto max-w-3xl divide-y divide-gray-900/10">
       <dl class="space-y-6 divide-y divide-gray-900/10">
-        {{ range $index, $item := site.Data.faq.items }}
+        {{ range $index, $item := $faq.items }}
           <div class="fade-in pt-6" style="--fade-delay: {{ mul $index 0.1 }}s">
             <dt class="text-lg font-semibold leading-7 text-gray-900">{{ $item.question }}</dt>
             <dd class="mt-4 pr-12">

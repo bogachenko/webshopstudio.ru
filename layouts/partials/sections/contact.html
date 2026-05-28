@@ -1,20 +1,21 @@
+{{ $contact := site.Data.contact }}
 <section id="contact" class="site-section site-section-dark">
   <div class="site-container">
     <div class="fade-in mx-auto max-w-2xl text-center" style="--fade-delay: 0s">
-      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Хотите запустить сайт или интернет-магазин?</h2>
-      <p class="mt-4 text-lg leading-8 text-gray-300">Расскажите, какой сайт вам нужен, и мы предложим подходящее решение, сроки и стоимость.</p>
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">{{ $contact.heading }}</h2>
+      <p class="mt-4 text-lg leading-8 text-gray-300">{{ $contact.description }}</p>
     </div>
 
     <form id="contact-form" action="#" method="POST" class="fade-in mx-auto mt-16 max-w-xl sm:mt-20" style="--fade-delay: 0.1s">
       <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <div class="sm:col-span-2">
-          <label for="name" class="block text-sm font-semibold leading-6 text-white">Имя</label>
+          <label for="name" class="block text-sm font-semibold leading-6 text-white">{{ $contact.fields.name.label }}</label>
           <div class="mt-2.5">
-            <input type="text" name="name" id="name" autocomplete="given-name" placeholder="Иван Иванов" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+            <input type="text" name="name" id="name" autocomplete="given-name" placeholder="{{ $contact.fields.name.placeholder }}" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
           </div>
         </div>
         <div class="sm:col-span-2">
-          <label for="contact-info" class="block text-sm font-semibold leading-6 text-white">Email</label>
+          <label for="contact-info" class="block text-sm font-semibold leading-6 text-white">{{ $contact.fields.contactInfo.label }}</label>
           <div class="mt-2.5">
             <input
               type="email"
@@ -22,54 +23,58 @@
               id="contact-info"
               autocomplete="email"
               required
-              placeholder="name@example.com"
+              placeholder="{{ $contact.fields.contactInfo.placeholder }}"
               class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
         <div class="sm:col-span-2">
-          <label for="website-type" class="block text-sm font-semibold leading-6 text-white">Тип сайта</label>
+          <label for="website-type" class="block text-sm font-semibold leading-6 text-white">{{ $contact.fields.taskType.label }}</label>
           <div class="mt-2.5">
             <select id="website-type" name="website-type" class="block w-full rounded-md border-0 bg-slate-800 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6">
-              <option>Сайт-визитка</option>
-              <option>Приведение сайта 152-ФЗ</option>
-              <option>Лендинг</option>
-              <option>Интернет-магазин WooCommerce</option>
-              <option>Корпоративный сайт</option>
-              <option>Пока не уверен</option>
+              {{ range $contact.fields.taskType.options }}
+                <option>{{ . }}</option>
+              {{ end }}
             </select>
           </div>
         </div>
         <div class="sm:col-span-2">
-          <label for="message" class="block text-sm font-semibold leading-6 text-white">Краткое описание задачи</label>
+          <label for="message" class="block text-sm font-semibold leading-6 text-white">{{ $contact.fields.message.label }}</label>
           <div class="mt-2.5">
-            <textarea name="message" id="message" rows="4" placeholder="Расскажите немного о вашем бизнесе и задаче..." class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"></textarea>
+            <textarea name="message" id="message" rows="4" placeholder="{{ $contact.fields.message.placeholder }}" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"></textarea>
           </div>
         </div>
       </div>
-    <div class="mt-8 flex gap-3">
-      <div class="flex h-6 items-center">
-        <input
-          id="personal-data-consent"
-          name="personal-data-consent"
-          type="checkbox"
-          required
-          class="h-4 w-4 rounded border-white/20 bg-white/5 text-indigo-500 focus:ring-indigo-500"
-        >
+      <div class="mt-8 flex gap-3">
+        <div class="flex h-6 items-center">
+          <input
+            id="personal-data-consent"
+            name="personal-data-consent"
+            type="checkbox"
+            required
+            class="h-4 w-4 rounded border-white/20 bg-white/5 text-indigo-500 focus:ring-indigo-500"
+          >
       </div>
         <label for="personal-data-consent" class="text-sm leading-6 text-gray-300">
-          Я даю согласие на обработку персональных данных и подтверждаю, что ознакомлен с
-          <a href="/personal-data-consent/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">согласием на обработку персональных данных</a>
-          и
-          <a href="/privacy/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">политикой обработки персональных данных</a>.
+          {{ $contact.consent.before }}
+          <a href="/personal-data-consent/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">{{ $contact.consent.personalDataLabel }}</a>
+          {{ $contact.consent.and }}
+          <a href="/privacy/" class="font-semibold text-indigo-300 underline underline-offset-4 hover:text-indigo-200" target="_blank" rel="noopener noreferrer">{{ $contact.consent.privacyLabel }}</a>.
         </label>
       </div>
 
-    <div class="mt-10">
-      <button type="submit" class="block w-full rounded-md bg-indigo-500 px-3.5 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Обсудить проект</button>
-    </div>
+      <div class="mt-10">
+        <button
+          type="submit"
+          data-submit-label="{{ $contact.submitLabel }}"
+          data-submitting-label="{{ $contact.submittingLabel }}"
+          class="block w-full rounded-md bg-indigo-500 px-3.5 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+        >
+          {{ $contact.submitLabel }}
+        </button>
+      </div>
 
-    <p id="contact-form-status" class="text-center text-sm leading-6 text-gray-300"></p>
+      <p id="contact-form-status" class="text-center text-sm leading-6 text-gray-300"></p>
     </form>
   </div>
 </section>

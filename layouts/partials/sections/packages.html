@@ -1,12 +1,13 @@
+{{ $packages := site.Data.packages }}
 <section id="pricing" class="site-section site-section-gray">
   <div class="site-container">
     <div class="fade-in mx-auto max-w-2xl text-center" style="--fade-delay: 0s">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Пакеты услуг</h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600">Понятные пакеты услуг под разные задачи бизнеса.</p>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $packages.heading }}</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">{{ $packages.description }}</p>
     </div>
 
     <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-stretch gap-y-6 sm:mt-20 lg:max-w-none lg:grid-cols-3 lg:gap-x-8">
-      {{ range $index, $tier := site.Data.packages.tiers }}
+        {{ range $index, $tier := $packages.tiers }}
         <article id="{{ $tier.id }}" class="fade-in flex h-full flex-col rounded-3xl p-8 ring-1 transition-transform hover:-translate-y-1 {{ if $tier.mostPopular }}bg-indigo-900 ring-indigo-900 shadow-xl{{ else }}bg-white ring-gray-200{{ end }}" style="--fade-delay: {{ mul $index 0.1 }}s">
           <h3 class="text-xl font-bold {{ if $tier.mostPopular }}text-white{{ else }}text-gray-900{{ end }}">{{ $tier.title }}</h3>
           <p class="mt-4 text-sm leading-6 {{ if $tier.mostPopular }}text-indigo-200{{ else }}text-gray-600{{ end }}">{{ $tier.description }}</p>
@@ -21,7 +22,7 @@
             {{ end }}
           </ul>
 
-          <a href="#contact" class="mt-8 block rounded-xl px-3 py-3 text-center text-sm font-semibold leading-6 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 {{ if $tier.mostPopular }}bg-indigo-500 hover:bg-indigo-400 focus-visible:outline-indigo-500{{ else }}bg-indigo-600 hover:bg-indigo-500 focus-visible:outline-indigo-600{{ end }}">Обсудить проект</a>
+          <a href="#contact" class="mt-8 block rounded-xl px-3 py-3 text-center text-sm font-semibold leading-6 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 {{ if $tier.mostPopular }}bg-indigo-500 hover:bg-indigo-400 focus-visible:outline-indigo-500{{ else }}bg-indigo-600 hover:bg-indigo-500 focus-visible:outline-indigo-600{{ end }}">{{ $packages.ctaLabel }}</a>
         </article>
       {{ end }}
     </div>

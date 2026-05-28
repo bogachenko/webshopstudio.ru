@@ -1,3 +1,4 @@
+{{ $hero := site.Data.hero }}
 <section id="hero" class="relative overflow-hidden bg-white pt-32 pb-20 lg:pt-48 lg:pb-32">
   <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
     <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);"></div>
@@ -7,50 +8,38 @@
     <div class="mx-auto max-w-4xl text-center">
       <div class="fade-in mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white px-3 py-1.5 text-xs font-medium text-slate-600" style="--fade-delay: 0s">
         <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-        Сайты под ключ с фокусом на заявки
+        {{ $hero.badge }}
       </div>
-      <h1 class="fade-in fluid-title bg-gradient-to-br from-slate-950 via-slate-800 to-indigo-700 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl" style="--fade-delay: 0.05s">Создаём сайты и интернет-магазины под ключ</h1>
-      <p class="fade-in mt-5 text-lg leading-8 text-slate-600 sm:text-xl" style="--fade-delay: 0.1s">Разрабатываем сайты: от структуры и дизайна до домена, хостинга и передачи проекта клиенту.</p>
+      <h1 class="fade-in fluid-title bg-gradient-to-br from-slate-950 via-slate-800 to-indigo-700 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl" style="--fade-delay: 0.05s">{{ $hero.title }}</h1>
+      <p class="fade-in mt-5 text-lg leading-8 text-slate-600 sm:text-xl" style="--fade-delay: 0.1s">{{ $hero.description }}</p>
 
       <div class="fade-in mt-8 flex flex-col items-center justify-center gap-y-5" style="--fade-delay: 0.2s">
         <div class="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
-          <a href="#contact" class="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-500 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-indigo-500/35 transition hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-            Обсудить проект
+          <a href="{{ $hero.primaryCta.url }}" class="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-500 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-indigo-500/35 transition hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            {{ $hero.primaryCta.label }}
             {{ partial "icons/arrow-right.html" (dict "class" "h-4 w-4") }}
           </a>
-          <a href="#pricing" class="flex items-center justify-center rounded-full bg-white/80 px-8 py-4 text-sm font-semibold text-slate-900 shadow-md ring-1 ring-inset ring-white/60 transition-all hover:bg-white backdrop-blur">
-            Рассчитать стоимость
+          <a href="{{ $hero.secondaryCta.url }}" class="flex items-center justify-center rounded-full bg-white/80 px-8 py-4 text-sm font-semibold text-slate-900 shadow-md ring-1 ring-inset ring-white/60 transition-all hover:bg-white backdrop-blur">
+            {{ $hero.secondaryCta.label }}
           </a>
         </div>
 
         <div class="feature-grid grid w-full max-w-4xl grid-cols-1 gap-2 rounded-2xl border border-white/70 bg-white/75 p-3 text-left text-sm text-slate-600 shadow-lg shadow-slate-900/10 backdrop-blur-md sm:grid-cols-3 sm:gap-0 sm:p-4">
-          <div class="flex items-start gap-2 rounded-xl p-3 sm:rounded-none sm:p-4 sm:pr-6 sm:border-r sm:border-slate-200/80">
-            {{ partial "icons/check-circle.html" (dict "class" "mt-0.5 h-4 w-4 shrink-0 text-emerald-500") }}
-            <span>Сайт готов к использованию</span>
-          </div>
-          <div class="flex items-start gap-2 rounded-xl p-3 sm:rounded-none sm:p-4 sm:pr-6 sm:border-r sm:border-slate-200/80">
-            {{ partial "icons/check-circle.html" (dict "class" "mt-0.5 h-4 w-4 shrink-0 text-emerald-500") }}
-            <span>Домен и хостинг оформляются на клиента</span>
-          </div>
-          <div class="flex items-start gap-2 rounded-xl p-3 sm:rounded-none sm:p-4 sm:pr-6">
-            {{ partial "icons/check-circle.html" (dict "class" "mt-0.5 h-4 w-4 shrink-0 text-emerald-500") }}
-            <span>Передаём доступы и объясняем, как пользоваться сайтом</span>
-          </div>
+              {{ range $index, $feature := $hero.features }}
+        <div class="flex items-start gap-2 rounded-xl p-3 sm:rounded-none sm:p-4 sm:pr-6{{ if lt $index (sub (len $hero.features) 1) }} sm:border-r sm:border-slate-200/80{{ end }}">
+          {{ partial "icons/check-circle.html" (dict "class" "mt-0.5 h-4 w-4 shrink-0 text-emerald-500") }}
+          <span>{{ $feature }}</span>
+        </div>
+      {{ end }}
         </div>
 
         <div class="fade-in mt-6 grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3" style="--fade-delay: 0.3s">
+          {{ range $hero.stats }}
           <div class="rounded-2xl border border-white/70 bg-white/70 px-5 py-4 shadow-md shadow-slate-900/5 backdrop-blur-md">
-            <p class="text-2xl font-bold text-slate-900">7 дней</p>
-            <p class="mt-1 text-sm text-slate-600">Средний срок запуска</p>
+            <p class="text-2xl font-bold text-slate-900">{{ .value }}</p>
+            <p class="mt-1 text-sm text-slate-600">{{ .label }}</p>
           </div>
-          <div class="rounded-2xl border border-white/70 bg-white/70 px-5 py-4 shadow-md shadow-slate-900/5 backdrop-blur-md">
-            <p class="text-2xl font-bold text-slate-900">+35%</p>
-            <p class="mt-1 text-sm text-slate-600">Рост конверсии</p>
-          </div>
-          <div class="rounded-2xl border border-white/70 bg-white/70 px-5 py-4 shadow-md shadow-slate-900/5 backdrop-blur-md">
-            <p class="text-2xl font-bold text-slate-900">24/7</p>
-            <p class="mt-1 text-sm text-slate-600">Поддержка после запуска</p>
-          </div>
+        {{ end }}
         </div>
       </div>
     </div>

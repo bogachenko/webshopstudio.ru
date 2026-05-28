@@ -1,12 +1,13 @@
+{{ $portfolio := site.Data.portfolio }}
 <section id="portfolio" class="site-section site-section-white">
   <div class="site-container">
     <div class="fade-in mx-auto max-w-2xl text-center" style="--fade-delay: 0s">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Примеры работ</h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600">Мы можем показать демонстрационные примеры сайтов и предложить структуру под вашу нишу.</p>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ $portfolio.heading }}</h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">{{ $portfolio.description }}</p>
     </div>
 
     <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-      {{ range $index, $project := site.Data.portfolio.projects }}
+      {{ range $index, $project := $portfolio.projects }}
         <article class="fade-in group relative flex flex-col items-start justify-between rounded-3xl bg-gray-50 p-6 ring-1 ring-gray-200 transition-all hover:shadow-lg sm:p-8" style="--fade-delay: {{ mul $index 0.1 }}s">
           <div class="relative mb-6 aspect-video w-full overflow-hidden rounded-2xl bg-gray-200 shadow-sm ring-1 ring-gray-200">
             <img
