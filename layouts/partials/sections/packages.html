@@ -11,6 +11,9 @@
         <article id="{{ $tier.id }}" class="fade-in flex h-full flex-col rounded-3xl p-8 ring-1 transition-transform hover:-translate-y-1 {{ if $tier.mostPopular }}bg-indigo-900 ring-indigo-900 shadow-xl{{ else }}bg-white ring-gray-200{{ end }}" style="--fade-delay: {{ mul $index 0.1 }}s">
           <h3 class="text-xl font-bold {{ if $tier.mostPopular }}text-white{{ else }}text-gray-900{{ end }}">{{ $tier.title }}</h3>
           <p class="mt-4 text-sm leading-6 {{ if $tier.mostPopular }}text-indigo-200{{ else }}text-gray-600{{ end }}">{{ $tier.description }}</p>
+          {{ with $tier.price }}
+            <p class="mt-6 text-3xl font-bold tracking-tight {{ if $tier.mostPopular }}text-white{{ else }}text-gray-900{{ end }}">{{ . }}</p>
+          {{ end }}          
 
           <ul class="mt-8 flex-grow space-y-4 text-sm leading-6 {{ if $tier.mostPopular }}text-indigo-100{{ else }}text-gray-600{{ end }}">
             {{ $popular := $tier.mostPopular }}

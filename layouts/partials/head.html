@@ -4,8 +4,12 @@
 {{- $siteTitle := .Site.Title -}}
 {{- $title := cond .IsHome $siteTitle (printf "%s | %s" .Title $siteTitle) -}}
 {{- $description := (.Description | default .Site.Params.description | plainify) -}}
-{{- $ogTitle := (.Site.Params.ogTitle | default $title) -}}
-{{- $ogDescription := (.Site.Params.ogDescription | default $description) -}}
+{{- $ogTitle := $title -}}
+{{- $ogDescription := $description -}}
+{{- if .IsHome -}}
+  {{- $ogTitle = (.Site.Params.ogTitle | default $title) -}}
+  {{- $ogDescription = (.Site.Params.ogDescription | default $description) -}}
+{{- end -}}
 {{- $siteName := (.Site.Params.siteName | default .Site.Title) -}}
 {{- $twitterCard := (.Site.Params.twitterCard | default "summary") -}}
 {{- $canonical := .Permalink -}}

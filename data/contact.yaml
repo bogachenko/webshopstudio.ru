@@ -6,8 +6,11 @@ fields:
     label: Имя
     placeholder: Иван Иванов
   contactInfo:
-    label: Email
-    placeholder: name@example.com
+    label: Email или Telegram
+    placeholder: name@example.com или @username
+  projectLink:
+    label: Ссылка на проект или репозиторий
+    placeholder: https://...
   taskType:
     label: Тип задачи
     options:
