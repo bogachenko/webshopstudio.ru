@@ -1,0 +1,26 @@
+{{ $trust := site.Data.trust }}
+<section id="trust" class="site-section site-section-white">
+  <div class="site-container">
+    <div class="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-slate-950 p-8 text-white shadow-2xl shadow-slate-900/20 sm:p-12">
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div class="fade-in" style="--fade-delay: 0s">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-indigo-300">Код, доступы и прозрачность</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ $trust.heading }}</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-300">{{ $trust.description }}</p>
+          <a href="#contact" class="mt-8 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">
+            Обсудить доработку
+          </a>
+        </div>
+
+        <ul class="grid grid-cols-1 gap-4">
+          {{ range $index, $item := $trust.items }}
+            <li class="fade-in flex items-start gap-3 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10" style="--fade-delay: {{ mul $index 0.05 }}s">
+              {{ partial "icons/check-circle.html" (dict "class" "mt-0.5 h-5 w-5 shrink-0 text-emerald-400") }}
+              <span class="text-base leading-7 text-slate-200">{{ . }}</span>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
