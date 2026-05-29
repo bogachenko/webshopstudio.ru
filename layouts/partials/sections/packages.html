@@ -12,8 +12,9 @@
           <h3 class="text-xl font-bold {{ if $tier.mostPopular }}text-white{{ else }}text-gray-900{{ end }}">{{ $tier.title }}</h3>
           <p class="mt-4 text-sm leading-6 {{ if $tier.mostPopular }}text-indigo-200{{ else }}text-gray-600{{ end }}">{{ $tier.description }}</p>
           {{ with $tier.term }}
-            <div class="mt-6 inline-flex w-fit items-center rounded-full px-3 py-1 text-sm font-semibold {{ if $tier.mostPopular }}bg-white/10 text-indigo-100 ring-1 ring-white/20{{ else }}bg-indigo-50 text-indigo-700 ring-1 ring-indigo-100{{ end }}">
-              Срок: {{ . }}
+            <div class="mt-6">
+              <p class="text-sm font-semibold uppercase tracking-wide {{ if $tier.mostPopular }}text-indigo-300{{ else }}text-indigo-600{{ end }}">Срок</p>
+              <p class="mt-2 text-3xl font-bold tracking-tight {{ if $tier.mostPopular }}text-white{{ else }}text-gray-900{{ end }}">{{ . }}</p>
             </div>
           {{ end }}
           <ul class="mt-8 flex-grow space-y-4 text-sm leading-6 {{ if $tier.mostPopular }}text-indigo-100{{ else }}text-gray-600{{ end }}">
