@@ -9,7 +9,7 @@ home = ["HTML"]
 
 [params]
 description = "Исправим ошибки в проекте после Lovable, Replit, Bolt, Cursor или Claude Code: рефакторинг, доработка функционала, хостинг, деплой, CI/CD, формы, аналитика и базовая подготовка к 152-ФЗ."
-siteName = "WebShop Studio"
+siteName = "MVP2PROD"
 ogTitle = "Доработка AI-прототипов и MVP до запуска"
 ogDescription = "Исправим ошибки в AI-прототипе, отрефакторим код, доработаем функционал, настроим хостинг, деплой, CI/CD, формы и аналитику."
 twitterCard = "summary"
