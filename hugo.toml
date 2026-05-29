@@ -1,4 +1,4 @@
-baseURL = "https://webshopstudio.ru/"
+baseURL = "https://mvp2prod.ru/"
 languageCode = "ru"
 title = "Доработка AI-прототипов и MVP: исправление ошибок, рефакторинг и запуск"
 

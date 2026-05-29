@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webshopstudio.ru/sitemap.xml
+Sitemap: https://mvp2prod.ru/sitemap.xml
